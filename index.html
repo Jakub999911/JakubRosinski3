@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakub Rosiński - Doradztwo Finansowe</title>
+  <style>
+    :root {
+      --navy: #001f3f;
+      --blue: #007bff;
+      --light-blue: #e6f2ff;
+      --white: #ffffff;
+      --text-color: #001f3f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      background: var(--light-blue);
+    }
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      margin-bottom: 20px;
+    }
+    nav {
+      background: var(--blue);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+    }
+    section {
+      background: var(--white);
+      margin: 20px auto;
+      padding: 40px 20px;
+      max-width: 1000px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    section img {
+      max-width: 200px;
+      border-radius: 8px;
+      margin-right: 20px;
+      float: left;
+    }
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    h2 {
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 20px;
+      line-height: 1;
+    }
+    blockquote {
+      background: var(--light-blue);
+      border-left: 5px solid var(--navy);
+      margin: 10px 0 20px;
+      padding: 15px 20px;
+      font-style: italic;
+      color: var(--navy);
+      border-radius: 4px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      padding: 12px 24px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .contact-form button:hover {
+      background: var(--blue);
+    }
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: var(--white);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/photo1.jpg" alt="Jakub Rosiński" />
+    <h1>Jakub Rosiński</h1>
+    <p>Doradztwo finansowe i ubezpieczeniowe</p>
+  </header>
+
+  <nav>
+    <a href="#about">O mnie</a>
+    <a href="#services">Usługi</a>
+    <a href="#reviews">Opinie</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <section id="about">
+    <h2>O mnie</h2>
+    <img src="images/photo2.jpg" alt="Jakub Rosiński" />
+    <p>Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom podejmować świadome decyzje finansowe i ubezpieczeniowe. Moim celem jest uczciwe doradztwo, bez nacisku na sprzedaż. Pracuję w branży od ponad roku i stawiam na zrozumienie potrzeb klienta.</p>
+  </section>
+
+  <section id="services">
+    <h2>Usługi</h2>
+    <ul>
+      <li>Ubezpieczenia na życie i zdrowotne</li>
+      <li>Ubezpieczenia komunikacyjne i majątkowe</li>
+      <li>Doradztwo finansowe i planowanie budżetu</li>
+      <li>Produkty emerytalne IKE/IKZE</li>
+      <li>Analiza i optymalizacja obecnych polis</li>
+    </ul>
+  </section>
+
+  <section id="reviews">
+    <h2>Opinie</h2>
+    <blockquote>"Dzięki Jakubowi bez problemu znalazłem idealne ubezpieczenie. Polecam każdemu!" - Hubert, Wrocław</blockquote>
+    <blockquote>"Profesjonalne doradztwo i pełne wsparcie na każdym etapie. Dziękuję!" - Aleksandra, Bolesławiec</blockquote>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:jakub.rosinski@ovb.com.pl">jakub.rosinski@ovb.com.pl</a></p>
+    <p>Telefon: <a href="tel:+48503753420">503 753 420</a></p>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Imię i nazwisko" required />
+        <input type="email" placeholder="Twój email" required />
+        <textarea rows="5" placeholder="Wiadomość" required></textarea>
+        <button type="submit">Wyślij</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jakub Rosiński</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/jakub-rosi%C5%84ski-247943308" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61571629013197" target="_blank">Facebook</a>
+    </div>
+  </footer>
+</body>
+</html>
