@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jakub Rosiński – Doradztwo Finansowe</title>
   <style>
-    :root { --navy: #001f3f; --blue: #007bff; --light-blue: #e6f2ff; --white: #ffffff; --text-color: #333; }
+    :root {
+      --navy: #001f3f;
+      --blue: #007bff;
+      --light-blue: #e6f2ff;
+      --white: #ffffff;
+      --text-color: #333;
+    }
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); }
     header { background: var(--navy); color: var(--white); padding: 60px 20px; text-align: center; }
@@ -18,16 +24,26 @@
     ul { list-style: none; padding: 0; }
     ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
     ul li::before { content: "•"; position: absolute; left: 0; color: var(--blue); }
-    blockquote { background: var(--light-blue); border-left: 5px solid var(--navy); margin: 0; padding: 10px; }
-    .contact-form input, 
-    .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
-    .contact-form button { padding: 12px 24px; background: var(--navy); color: var(--white); border: none; border-radius: 4px; cursor: pointer; }
+    blockquote { background: var(--light-blue); border-left: 5px solid var(--navy); margin: 0 0 20px; padding: 10px; }
+    .review-form input,
+    .review-form textarea,
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .review-form button,
+    .contact-form button {
+      padding: 12px 24px; background: var(--navy); color: var(--white);
+      border: none; border-radius: 4px; cursor: pointer;
+    }
+    .review-form button:hover,
     .contact-form button:hover { background: var(--blue); }
     footer { background: var(--navy); color: var(--white); text-align: center; padding: 20px; }
     .social-links a { margin: 0 10px; color: var(--white); text-decoration: none; }
   </style>
 </head>
 <body>
+
   <header>
     <img src="photo1.jpg" alt="Jakub Rosiński" />
     <h1>Jakub Rosiński</h1>
@@ -43,7 +59,8 @@
 
   <section id="about">
     <h2>O mnie</h2>
-    <img src="photo2.jpg" alt="Jakub Rosiński" style="max-width:200px;border-radius:8px;float:left;margin-right:20px;" />
+    <img src="photo2.jpg" alt="Jakub Rosiński"
+         style="max-width:200px;border-radius:8px;float:left;margin-right:20px;" />
     <p>Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom podejmować świadome decyzje finansowe i ubezpieczeniowe. Moim celem jest uczciwe doradztwo, bez nacisku na sprzedaż. Pracuję w branży od ponad roku i stawiam na zrozumienie potrzeb klienta.</p>
   </section>
 
@@ -60,8 +77,23 @@
 
   <section id="reviews">
     <h2>Opinie</h2>
-    <blockquote>“Dzięki Jakubowi bez problemu znalazłem idealne ubezpieczenie. Polecam każdemu!”</blockquote>
-    <blockquote>“Profesjonalne doradztwo i pełne wsparcie na każdym etapie. Dziękuję!”</blockquote>
+    <div id="reviews-list">
+      <blockquote>“Dzięki Jakubowi bez problemu znalazłem idealne ubezpieczenie. Polecam każdemu!”</blockquote>
+      <blockquote>“Profesjonalne doradztwo i pełne wsparcie na każdym etapie. Dziękuję!”</blockquote>
+      <!-- tutaj po weryfikacji dodawaj kolejne opinie -->
+    </div>
+
+    <div class="review-form">
+      <h3>Dodaj opinię</h3>
+      <form id="review-form"
+            action="https://formspree.io/f/mdkznkyo"
+            method="POST">
+        <input  type="text"   name="name"   placeholder="Twoje imię"     required />
+        <textarea name="review" rows="4"    placeholder="Twoja opinia"  required></textarea>
+        <button type="submit">Wyślij opinię</button>
+      </form>
+      <p id="review-status" style="margin-top:10px;"></p>
+    </div>
   </section>
 
   <section id="contact">
@@ -74,7 +106,7 @@
             method="POST">
         <input type="text"   name="name"    placeholder="Imię i nazwisko" required />
         <input type="email"  name="email"   placeholder="Twój email"     required />
-        <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
+        <textarea name="message" rows="5"   placeholder="Wiadomość"      required></textarea>
         <button type="submit">Wyślij</button>
       </form>
       <p id="form-status" style="margin-top:10px;"></p>
@@ -89,29 +121,49 @@
     </div>
   </footer>
 
-  <!-- SKRYPT FORMSPREE -->
   <script>
-    const form   = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async e => {
+    // — formularz opinii —
+    const rForm   = document.getElementById("review-form");
+    const rStatus = document.getElementById("review-status");
+    rForm.addEventListener("submit", async e => {
       e.preventDefault();
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
+      const data     = new FormData(rForm);
+      const response = await fetch(rForm.action, {
+        method: rForm.method,
         body: data,
         headers: { "Accept": "application/json" }
       });
-
       if (response.ok) {
-        status.innerText   = "✅ Wiadomość została wysłana!";
-        status.style.color = "green";
-        form.reset();
+        rStatus.textContent   = "✅ Dziękujemy za opinię! Po weryfikacji pojawi się na stronie.";
+        rStatus.style.color   = "green";
+        rForm.reset();
       } else {
-        status.innerText   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
-        status.style.color = "red";
+        rStatus.textContent   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
+        rStatus.style.color   = "red";
+      }
+    });
+
+    // — formularz kontaktowy —
+    const cForm   = document.getElementById("contact-form");
+    const cStatus = document.getElementById("form-status");
+    cForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      const data     = new FormData(cForm);
+      const response = await fetch(cForm.action, {
+        method: cForm.method,
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+      if (response.ok) {
+        cStatus.textContent   = "✅ Wiadomość została wysłana!";
+        cStatus.style.color   = "green";
+        cForm.reset();
+      } else {
+        cStatus.textContent   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
+        cStatus.style.color   = "red";
       }
     });
   </script>
+
 </body>
 </html>
