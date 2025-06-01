@@ -12,39 +12,116 @@
       --white: #ffffff;
       --text-color: #333;
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); }
-    header { background: var(--navy); color: var(--white); padding: 60px 20px; text-align: center; }
-    header img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin-bottom: 20px; }
-    nav { background: var(--blue); display: flex; justify-content: center; gap: 30px; padding: 10px 0; }
-    nav a { color: var(--white); text-decoration: none; font-weight: bold; }
-    nav a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 8px; }
-    section { background: var(--white); margin: 20px auto; padding: 40px 20px; max-width: 800px; border-radius: 8px; }
-    section h2 { border-bottom: 2px solid var(--blue); padding-bottom: 10px; margin-bottom: 20px; }
-    ul { list-style: none; padding: 0; }
-    ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-    ul li::before { content: "•"; position: absolute; left: 0; color: var(--blue); }
-    blockquote { background: var(--light-blue); border-left: 5px solid var(--navy); margin: 0 0 20px; padding: 10px; }
-    .review-form input,
-    .review-form textarea,
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+    }
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    nav {
+      background: var(--blue);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+    section {
+      background: var(--white);
+      margin: 20px auto;
+      padding: 40px 20px;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+    section h2 {
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+    }
+    blockquote {
+      background: var(--light-blue);
+      border-left: 5px solid var(--navy);
+      margin: 0;
+      padding: 10px;
+    }
     .contact-form input,
     .contact-form textarea {
-      width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    .review-form button,
+    .contact-form label {
+      display: block;
+      margin: 10px 0 4px;
+      font-weight: bold;
+    }
     .contact-form button {
-      padding: 12px 24px; background: var(--navy); color: var(--white);
-      border: none; border-radius: 4px; cursor: pointer;
+      padding: 12px 24px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    .review-form button:hover,
-    .contact-form button:hover { background: var(--blue); }
-    footer { background: var(--navy); color: var(--white); text-align: center; padding: 20px; }
-    .social-links a { margin: 0 10px; color: var(--white); text-decoration: none; }
-    .social-links a:hover { text-decoration: underline; }
+    .contact-form button:hover {
+      background: var(--blue);
+    }
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: var(--white);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <img src="photo1.jpg" alt="Jakub Rosiński" />
     <h1>Jakub Rosiński</h1>
@@ -62,7 +139,12 @@
     <h2>O mnie</h2>
     <img src="photo2.jpg" alt="Jakub Rosiński"
          style="max-width:200px;border-radius:8px;float:left;margin-right:20px;" />
-    <p>Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom podejmować świadome decyzje finansowe i ubezpieczeniowe. Moim celem jest uczciwe doradztwo, bez nacisku na sprzedaż. Pracuję w branży od ponad roku i stawiam na zrozumienie potrzeb klienta.</p>
+    <p>
+      Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom
+      podejmować świadome decyzje finansowe i ubezpieczeniowe. Moim celem jest uczciwe
+      doradztwo, bez nacisku na sprzedaż. Pracuję w branży od ponad roku i stawiam na
+      zrozumienie potrzeb klienta.
+    </p>
   </section>
 
   <section id="services">
@@ -78,36 +160,30 @@
 
   <section id="reviews">
     <h2>Opinie</h2>
-    <div id="reviews-list">
-      <blockquote>“Dzięki Jakubowi bez problemu znalazłem idealne ubezpieczenie. Polecam każdemu!”</blockquote>
-      <blockquote>“Profesjonalne doradztwo i pełne wsparcie na każdym etapie. Dziękuję!”</blockquote>
-      <!-- tutaj po weryfikacji dodawaj kolejne opinie -->
-    </div>
-
-    <div class="review-form">
-      <h3>Dodaj opinię</h3>
-      <form id="review-form"
-            action="https://formspree.io/f/mdkznkyo"
-            method="POST">
-        <input  type="text"   name="name"   placeholder="Twoje imię"     required />
-        <textarea name="review" rows="4"    placeholder="Twoja opinia"  required></textarea>
-        <button type="submit">Wyślij opinię</button>
-      </form>
-      <p id="review-status" style="margin-top:10px;"></p>
-    </div>
+    <blockquote>“Dzięki Jakubowi bez problemu znalazłem idealne ubezpieczenie. Polecam każdemu!”</blockquote>
+    <blockquote>“Profesjonalne doradztwo i pełne wsparcie na każdym etapie. Dziękuję!”</blockquote>
   </section>
 
   <section id="contact">
     <h2>Kontakt</h2>
     <p>Email: <a href="mailto:jakub.rosinski@ovb.com.pl">jakub.rosinski@ovb.com.pl</a></p>
     <p>Telefon: <a href="tel:+48503753420">503 753 420</a></p>
+
     <div class="contact-form">
       <form id="contact-form"
-            action="https://formspree.io/f/xqabzkzj"
-            method="POST">
-        <input type="text"   name="name"    placeholder="Imię i nazwisko" required />
-        <input type="email"  name="email"   placeholder="Twój email"     required />
-        <textarea name="message" rows="5"   placeholder="Wiadomość"      required></textarea>
+            action="https://getform.io/f/anlxxxoa"
+            method="POST"
+            enctype="multipart/form-data">
+
+        <input type="text"   name="name"        placeholder="Imię i nazwisko" required />
+        <input type="email"  name="email"       placeholder="Twój email"     required />
+        <textarea name="message" rows="5"       placeholder="Wiadomość"       required></textarea>
+
+        <label for="attachment">Załącznik (opcjonalnie):</label>
+        <input type="file" id="attachment" name="file" />
+
+        <input type="hidden" name="_gotcha" style="display:none !important" />
+
         <button type="submit">Wyślij</button>
       </form>
       <p id="form-status" style="margin-top:10px;"></p>
@@ -117,55 +193,38 @@
   <footer>
     <p>© 2025 Jakub Rosiński</p>
     <div class="social-links">
+      <a href="https://www.x.com/rosinskifinanse" target="_blank">X/Twitter</a>
       <a href="https://www.linkedin.com/in/jakub-rosi%C5%84ski-247943308/" target="_blank">LinkedIn</a>
       <a href="https://www.facebook.com/profile.php?id=61571629013197" target="_blank">Facebook</a>
-      <a href="https://x.com/rosinskifinanse?s=21&t=AgTi-RP2PvHM6vH__wABLQ" target="_blank">X</a>
     </div>
   </footer>
 
   <script>
-    // — formularz opinii —
-    const rForm   = document.getElementById("review-form");
-    const rStatus = document.getElementById("review-status");
-    rForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      const data     = new FormData(rForm);
-      const response = await fetch(rForm.action, {
-        method: rForm.method,
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
-      if (response.ok) {
-        rStatus.textContent   = "✅ Dziękujemy za opinię! Po weryfikacji pojawi się na stronie.";
-        rStatus.style.color   = "green";
-        rForm.reset();
-      } else {
-        rStatus.textContent   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
-        rStatus.style.color   = "red";
-      }
-    });
+    const form   = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
 
-    // — formularz kontaktowy —
-    const cForm   = document.getElementById("contact-form");
-    const cStatus = document.getElementById("form-status");
-    cForm.addEventListener("submit", async e => {
+    form.addEventListener("submit", async e => {
       e.preventDefault();
-      const data     = new FormData(cForm);
-      const response = await fetch(cForm.action, {
-        method: cForm.method,
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
-      if (response.ok) {
-        cStatus.textContent   = "✅ Wiadomość została wysłana!";
-        cStatus.style.color   = "green";
-        cForm.reset();
-      } else {
-        cStatus.textContent   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
-        cStatus.style.color   = "red";
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data
+        });
+        if (response.ok) {
+          status.innerText   = "✅ Wiadomość została wysłana!";
+          status.style.color = "green";
+          form.reset();
+        } else {
+          status.innerText   = "❌ Coś poszło nie tak. Spróbuj ponownie.";
+          status.style.color = "red";
+        }
+      } catch (err) {
+        status.innerText   = "❌ Błąd sieci. Spróbuj za chwilę.";
+        status.style.color = "red";
       }
     });
   </script>
-
 </body>
 </html>
