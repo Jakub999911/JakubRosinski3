@@ -5,26 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jakub Rosiński – Doradztwo Finansowe</title>
   <style>
-    :root { --navy: #001f3f; --blue: #007bff; --light-blue: #e6f2ff; --white: #ffffff; --text-color: #333; }
+    :root {
+      --navy: #001f3f;
+      --blue: #007bff;
+      --light-blue: #e6f2ff;
+      --white: #ffffff;
+      --text-color: #333;
+    }
     *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); }
-    header { background: var(--navy); color: var(--white); padding: 60px 20px; text-align: center; }
-    header img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin-bottom: 20px; }
-    nav { background: var(--blue); display: flex; justify-content: center; gap: 30px; padding: 10px 0; }
-    nav a { color: var(--white); text-decoration: none; font-weight: bold; }
-    nav a:hover { background: rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 8px; }
-    section { background: var(--white); margin: 20px auto; padding: 40px 20px; max-width: 800px; border-radius: 8px; }
-    section h2 { border-bottom: 2px solid var(--blue); padding-bottom: 10px; margin-bottom: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+    }
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    nav {
+      background: var(--blue);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+    section {
+      background: var(--white);
+      margin: 20px auto;
+      padding: 40px 20px;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+    section h2 {
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
     ul { list-style: none; padding: 0; }
-    ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-    ul li::before { content: "•"; position: absolute; left: 0; color: var(--blue); }
-    blockquote { background: var(--light-blue); border-left: 5px solid var(--navy); margin: 0; padding: 10px; }
-    .contact-form input, 
-    .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
-    .contact-form button { padding: 12px 24px; background: var(--navy); color: var(--white); border: none; border-radius: 4px; cursor: pointer; }
-    .contact-form button:hover { background: var(--blue); }
-    footer { background: var(--navy); color: var(--white); text-align: center; padding: 20px; }
-    .social-links a { margin: 0 10px; color: var(--white); text-decoration: none; }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+    }
+    blockquote {
+      background: var(--light-blue);
+      border-left: 5px solid var(--navy);
+      margin: 0;
+      padding: 10px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      padding: 12px 24px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: var(--blue);
+    }
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* TUTAJ tłumimy float z #about: */
+    #services {
+      clear: both;
+      /* opcjonalny margines nad „Usługi” */
+      /* margin-top: 20px; */
+    }
   </style>
 </head>
 <body>
@@ -43,8 +134,11 @@
 
   <section id="about">
     <h2>O mnie</h2>
-    <img src="photo2.jpg" alt="Jakub Rosiński" style="max-width:200px;border-radius:8px;float:left;margin-right:20px;" />
-    <p>Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom podejmować świadome decyzje finansowe i ubezpieczeniowe. Moim celem jest uczciwe doradztwo, bez nacisku na sprzedaż. Pracuję w branży od ponad roku i stawiam na zrozumienie potrzeb klienta.</p>
+    <img src="photo2.jpg" alt="Jakub Rosiński"
+         style="max-width:200px;border-radius:8px;float:left;margin-right:20px;" />
+    <p>Nazywam się Jakub Rosiński i pomagam klientom indywidualnym oraz firmom podejmować świadome decyzje
+       finansowe i ubezpieczeniowe. Moim celem jest uczciwe doradztwo, bez nacisku na sprzedaż. Pracuję
+       w branży od ponad roku i stawiam na zrozumienie potrzeb klienta.</p>
   </section>
 
   <section id="services">
@@ -60,7 +154,6 @@
 
   <section id="reviews">
     <h2>Opinie</h2>
-    <!-- Tu wklejamy kod Google Forms -->
     <div style="margin-top: 30px; text-align: center;">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSf2XVwpFOb_jnyJPJ5qybDA8hhDjskg9exqf3RxiOa0bhVLZQ/viewform?embedded=true"
@@ -88,7 +181,7 @@
         <input type="email"  name="email"   placeholder="Twój email"     required />
         <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
         <label for="attachment" style="display:block; margin-bottom:8px; font-weight:bold;">Załącz plik:</label>
-        <input type="file"   name="file" id="attachment" style="margin-bottom:20px;" />
+        <input type="file" name="file" id="attachment" style="margin-bottom:20px;" />
         <button type="submit">Wyślij</button>
       </form>
       <p id="form-status" style="margin-top:10px;"></p>
@@ -104,7 +197,7 @@
     </div>
   </footer>
 
-  <!-- SKRYPT AJAX do formularza Getform (opcjonalnie – pokazuje status wysyłki) -->
+  <!-- SKRYPT AJAX do formularza Getform (pokazuje status wysyłki) -->
   <script>
     const form   = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
