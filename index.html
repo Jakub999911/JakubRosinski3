@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jakub Rosiński – Doradztwo Finansowe</title>
+
+  <!-- === Google Analytics (gtag.js) === -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1Z12JG796"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-V1Z12JG796');
+  </script>
+  <!-- === koniec kodu Google Analytics === -->
+
   <style>
     :root {
       --navy: #001f3f;
@@ -21,6 +32,7 @@
       padding: 0;
       color: var(--text-color);
     }
+    /* HEADER */
     header {
       background: var(--navy);
       color: var(--white);
@@ -34,6 +46,7 @@
       border-radius: 50%;
       margin-bottom: 20px;
     }
+    /* NAVIGACJA */
     nav {
       background: var(--blue);
       display: flex;
@@ -51,6 +64,7 @@
     nav a:hover {
       background: rgba(255, 255, 255, 0.2);
     }
+    /* OGÓLNY STYL SEKCJI */
     section {
       background: var(--white);
       margin: 20px auto;
@@ -64,6 +78,7 @@
       margin-bottom: 20px;
       color: var(--navy);
     }
+    /* LISTA W USŁUGACH */
     ul {
       list-style: none;
       padding: 0;
@@ -79,6 +94,7 @@
       left: 0;
       color: var(--blue);
     }
+    /* OPINIE */
     blockquote {
       background: var(--light-blue);
       border-left: 5px solid var(--navy);
@@ -95,6 +111,7 @@
       font-weight: bold;
       color: var(--navy);
     }
+    /* FORMULARZ KONTAKTOWY */
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -119,6 +136,7 @@
     .contact-form button:hover {
       background: var(--blue);
     }
+    /* STOPKA */
     footer {
       background: var(--navy);
       color: var(--white);
@@ -133,21 +151,21 @@
     .social-links a:hover {
       text-decoration: underline;
     }
-    /* Nie pokazuj adresu email w formularzu Google */
+    /* Próba ukrycia pola e-mail w Google Forms – działa tylko po stronie Forms */
     .goog-form-email {
       display: none !important;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- ===== HEADER ===== -->
   <header>
     <img src="photo1.jpg" alt="Jakub Rosiński" />
     <h1>Jakub Rosiński</h1>
     <p>Doradztwo finansowe i ubezpieczeniowe</p>
   </header>
 
-  <!-- NAWIGACJA -->
+  <!-- ===== NAV ===== -->
   <nav>
     <a href="#about">O mnie</a>
     <a href="#services">Usługi</a>
@@ -155,7 +173,7 @@
     <a href="#contact">Kontakt</a>
   </nav>
 
-  <!-- SEKCJA O MNIE -->
+  <!-- ===== SEKCJA: O MNIE ===== -->
   <section id="about">
     <h2>O mnie</h2>
     <img
@@ -172,7 +190,7 @@
     <div style="clear: both;"></div>
   </section>
 
-  <!-- SEKCJA USŁUGI -->
+  <!-- ===== SEKCJA: USŁUGI ===== -->
   <section id="services">
     <h2>Usługi</h2>
     <ul>
@@ -184,7 +202,7 @@
     </ul>
   </section>
 
-  <!-- SEKCJA OPINIE -->
+  <!-- ===== SEKCJA: OPINIE ===== -->
   <section id="reviews">
     <h2>Opinie</h2>
 
@@ -217,13 +235,19 @@
     </div>
   </section>
 
-  <!-- SEKCJA KONTAKT -->
+  <!-- ===== SEKCJA: KONTAKT ===== -->
   <section id="contact">
     <h2>Kontakt</h2>
-    <p>Email: <a href="mailto:jakub.rosinski@ovb.com.pl">jakub.rosinski@ovb.com.pl</a></p>
-    <p>Telefon: <a href="tel:+48503753420">503 753 420</a></p>
+    <p>
+      Email:
+      <a href="mailto:jakub.rosinski@ovb.com.pl">jakub.rosinski@ovb.com.pl</a>
+    </p>
+    <p>
+      Telefon:
+      <a href="tel:+48503753420">503 753 420</a>
+    </p>
 
-    <!-- Formularz kontaktowy (Getform) -->
+    <!-- Formularz Getform (możliwość wysyłki pliku) -->
     <div class="contact-form">
       <h3>Wyślij wiadomość lub załącznik</h3>
       <form
@@ -257,7 +281,7 @@
     </div>
   </section>
 
-  <!-- STOPKA -->
+  <!-- ===== STOPKA ===== -->
   <footer>
     <p>© 2025 Jakub Rosiński</p>
     <div class="social-links">
@@ -274,7 +298,7 @@
     </div>
   </footer>
 
-  <!-- SKRYPT DO FORMULARZA KONTAKTOWEGO (asynchroniczne wysyłanie) -->
+  <!-- SKRYPT ASYNC DO OBSŁUGI GETFORM (wysyłka bez przeładowania) -->
   <script>
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
